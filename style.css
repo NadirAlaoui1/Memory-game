@@ -52,4 +52,5 @@ body {
 
 .front {
   transform: rotateY(180deg);
+  background: rgb(227, 235, 241)
 }
