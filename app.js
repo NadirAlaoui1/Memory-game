@@ -4,6 +4,8 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
+
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -25,6 +27,7 @@ function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
   isMatch ? disableCards() : unflipCards();
+  
 }
 
 function disableCards() {
@@ -32,6 +35,7 @@ function disableCards() {
   secondCard.removeEventListener('click', flipCard);
 
   resetBoard();
+  
 }
 
 function unflipCards() {
@@ -42,17 +46,19 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 700);
+  
 }
 
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
+  
 }
 
 (function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
+    let randomPos = Math.floor(Math.random() * 6);
     card.style.order = randomPos;
   });
 })();
