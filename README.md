@@ -7,6 +7,7 @@
 - Everytime you refresh the cards randomly position on the page.
 
 
+
 ## To-do list
 
 ### Must-have features
@@ -16,7 +17,7 @@
 - Make it playable by keyboard
 - Let a user define custom image urls
 - Multiplayer (local)
-
+- When player wins there is a message that pops up and player can play again.
 
 
 
