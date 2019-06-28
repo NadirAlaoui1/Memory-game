@@ -4,6 +4,18 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
+function toggleOverlay(){
+	var overlay = document.getElementById('overlay');
+	var specialBox = document.getElementById('specialBox');
+	overlay.style.opacity = .8;
+	if(overlay.style.display == "block"){
+		overlay.style.display = "none";
+		specialBox.style.display = "none";
+	} else {
+		overlay.style.display = "block";
+		specialBox.style.display = "block";
+	}
+}
 
 
 function flipCard() {
@@ -46,7 +58,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 700);
+  }, 1000);
   
 }
 
@@ -62,5 +74,7 @@ function resetBoard() {
     card.style.order = randomPos;
   });
 })();
+
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
